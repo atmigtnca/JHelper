@@ -12,6 +12,10 @@ const ObfuscatedEmail = ({ user, domain, label }) => {
     return <span>[이메일 보호됨]</span>;
   }
 
+  if (!user || !domain) {
+    return <span>[이메일 보호됨]</span>;
+  }
+
   const email = `${user}@${domain}`;
   return (
     <a href={`mailto:${email}`}>
